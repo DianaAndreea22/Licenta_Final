@@ -1,0 +1,54 @@
+<div class="az-header">
+  <div class="container">
+    <div class="az-header-left">
+      <a href="{{ url_for('index') }}" class="az-logo"><span></span>AidAuto</a>
+      <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+    </div>
+    <div class="az-header-menu">
+      <div class="az-header-menu-header">
+        <a href="{{ url_for('index') }}" class="az-logo"><span></span>AidAuto</a>
+        <a href="" class="close">&times;</a>
+      </div>
+      <ul class="nav" id="navigation">
+
+        <li class="nav-item">
+          <a href="{{ url_for('meniu.index') }}"" class=" nav-link"><i class="typcn typcn-chart-area-outline"></i>
+            Meniu</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('informatii_masina.index') }}" class="nav-link"><i
+              class="typcn typcn-chart-bar-outline"></i> Informatii Brand</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('probleme_frecvente.index') }}" class="nav-link"><i class="typcn typcn-clipboard"></i>
+            Probleme Frecvente</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('martori.index') }}" class="nav-link"><i class="typcn typcn-code-outline"></i> Martori</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('forum.index') }}" class="nav-link"><i class="typcn typcn-code-outline"></i> Forum</a>
+        </li>
+
+
+        
+      </ul>
+    </div><!-- az-header-menu -->
+
+    {% if g.user %}
+    <div style="margin-right:-8%" class="az-header-right">
+          <a href="{{ url_for('auth.logout') }}" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign
+            Out</a>
+    </div><!-- az-header-right -->
+    {% else %}
+    <div class="az-header-right">
+      <div class="media" style="margin: 5%;">
+        <a href="{{ url_for('auth.login') }}" class="btn btn-outline-indigo">Login</a>
+      </div>
+      <div class="media" style="margin: 5%;">
+        <a href="{{ url_for('auth.register') }}" class="btn btn-az-primary btn-block">Register</a>
+      </div>
+    </div><!-- az-header-right -->
+    {% endif %}
+  </div><!-- container -->
+</div><!-- az-header -->

@@ -1,0 +1,45 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block header %}
+<h1>{% block title %}Log In{% endblock %}</h1>
+{% endblock %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="az-signin-wrapper">
+  <div class="az-card-signin">
+    <a href="{{ url_for('index') }}" class="az-logo"><span></span>AidAuto</a>
+
+
+    <div class="az-signin-header">
+      <h2>Welcome back!</h2>
+      <h4>Please sign in to continue</h4>
+      <br>
+      <form role="form" method="post" action="">
+        <div class="form-group">
+          <label>Username: </label>
+          <input type="text" class="form-control" name="username" id="username" required placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label>Password: </label>
+          <input type="password" class="form-control" name="password" id="password" required placeholder="Password">
+        </div>
+        <button type="submit" name="login" class="btn btn-az-primary btn-block">Sign In</button>
+      </form>
+
+    </div>
+    <div class="az-signin-footer">
+      <p>Don't have an account? <a href="{{ url_for('auth.register') }}">Register</a></p>
+      <br />
+      <p style="font-size: 60%;" class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+        &copy; <a target="_blank" href="https://http://127.0.0.1:5000">AidAuto</a>
+        - created by Andrieș Diana Andreea</a>
+        for <a target="_blank" href="https://www.uaic.ro/en/">UAIC Iasi</a>Bachelor's thesis
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}{% endblock javascripts %}

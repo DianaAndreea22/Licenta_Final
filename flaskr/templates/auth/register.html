@@ -1,0 +1,96 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block header %}
+<h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="az-signup-wrapper">
+  <div style="margin-top:-9%" class="az-column-signup-left">
+    <div>
+      
+      <img style="margin-left: 30%; margin-bottom:10%;" src="/static/emblema-aid.jpeg" alt="AidAuto" width="100"
+        height="100">
+      
+      <h5>Totul despre martorii si problemele masinilor!</h5>
+      <p>AidAuto este o aplicatie web ce serveste persoanelor care isi doresc sa invete mai multe despre diagnosticarea
+        si depanarea posibilelor probleme ale masinilor lor. Platforma include o serie de pagini destinate celor mai
+        intalnite topice din aceasta arie precum: martori de bord, probleme des intalnite sau informatii specifice
+        fiecarui model.</p>
+
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+        &copy; <a target="_blank" href="https://http://127.0.0.1:5000">AidAuto</a>
+        - created by Andrieș Diana Andreea</a>
+        for <a target="_blank" href="https://www.uaic.ro/en/">UAIC Iasi</a> Bachelor's thesis
+      </span>
+      <hr>
+      <a href="{{ url_for('index') }}" class="btn btn-outline-indigo">To the Home Page ►</a>
+    </div>
+  </div>
+  <div class="az-column-signup">
+    <h1></h1>
+
+    <div class="az-signup-header">
+
+      <h2>Register</h2>
+      <hr>
+
+      <form role="form" method="post" action="">
+
+
+        <div class="form-group">
+          <label>Nume utilizator: </label>
+          <input class="form-control" type="text" name="username" id="username" placeholder="Nume utilizator" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email: </label>
+          <input class="form-control" name="email" id="email" type="email" required placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <label>Password: </label>
+          <input class="form-control" type="password" name="password" id="password" required placeholder="***********">
+        </div>
+
+        <div class="form-group">
+          <label>Nume:</label>
+          <input class="form-control" type="text" name="nume" id="nume" required placeholder="Nume">
+        </div>
+
+        <div class="form-group">
+          <label>Prenume:</label>
+          <input class="form-control" type="text" name="prenume" id="prenume" required placeholder="Prenume">
+        </div>
+
+        <div class="form-group">
+          <label>Număr de telefon:</label>
+          <input class="form-control" type="text" name="nr-telefon" id="nr-telefon" required placeholder="Număr de telefon">
+        </div>
+
+        <div class="form-group">
+          <label>Marcă mașină:</label>
+          <input class="form-control" type="text" name="marcă_mașină" id="marcă_mașină" required placeholder="Marcă mașină">
+        </div>
+
+
+
+        <hr>
+
+        <button type="submit" name="register" class="btn btn-az-primary btn-block">Create Account</button>
+
+      </form>
+    </div>
+    <div class="az-signup-footer">
+      <p>Already have an account? <a href="{{ url_for('auth.login') }}">Sign In</a></p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block javascripts %}{% endblock javascripts %}
